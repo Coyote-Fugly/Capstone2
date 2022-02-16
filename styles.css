@@ -1,8 +1,7 @@
 body {
     background-image: url(spainRoad.png);
     background-repeat: no-repeat;
-    height: 550px;
-    Width: 958px;
+    background-size: 1000px 575px;
 }
 
 button {
