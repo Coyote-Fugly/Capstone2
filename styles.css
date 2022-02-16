@@ -1,0 +1,28 @@
+body {
+    background-image: url(https://lh3.googleusercontent.com/qWPV6caAl0M6GJ6nigx5qnxN3YobSSyQHwTD2amiGPPddcCfBwtB_wJkyK2wG60TJi1n0Wu6dj4AD8Dzf3YOPT0UUn8MMCXdbhokjOxr9X0NRfxaMvr1W1NO9300YzKpi2ZxDvpbRVxktGaWz0akpSkCka-_GBelYWITzmbDKpst6cwEZ7xHVF1ssMpqeNn9s4flooWd4ptNvYV7q0cF04RnhY0iy9YHMDvgFwZLjAJmLV9ePQGeK-krPg21I3lLVGFTgDZyn-uCY7f7YV57v0SKHGFvjgUKgVoh7GLbvfCuloL6xBCMbpiaye8-CwUN2TrB84m5k25b01VWBTVMLhGn_NIyQQmGyiRdpCIdDNp_Ycd57u29-wEoNY2sGBmj_LdDZL3HFAZ67Kpl1GRao-d6N1Z9VzTiuciKrBAcb29pAwZQincE9bkm6FZXYbA0vTy4GOSCpYAcpS3PCOgrZWUXY2xy-GwTmW1MATy5ARL58TgEGyEaHnGgvj5ao20p2WkPULghphXg-bjPUoYu220BowThO8f3W0zWCHFN3m29g-b3GA8B1pF2GXs9bcOomunZMqrZ_C-qPH65WUZS08GyIGYTueP1nmGNTNv4CXS2wcNTSdXQq3Uamaa87sZti-RpE2DT15ptvyrG9_XvrmM-w7LvA80ulR2yFPg6bjjuO2qnEUL8ow9C3hI70GJxiKSmUxJ9-Y6bwgw1zMw_Lw=w1001-h575-no?authuser=0);
+    background-repeat: no-repeat;
+}
+
+button {
+    position: relative;
+    margin: .5em;
+}
+
+#buttonPanel {
+    position: absolute;
+    top: 490px;
+    left: 350px;
+}
+
+#reset {
+    position: absolute;
+    top: 140px;
+    right: 125px;
+}
+
+#momCar {
+    /* display: inine; */
+    position: absolute;
+    /* top: 425px;
+    left: 253px; */
+}

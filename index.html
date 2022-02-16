@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Rains of Spain</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+        </script>
+    </head>
+    <body>
+        <div id="momCar" style="top:425px;left:253px;display:inline;transform:rotate(0);">
+            <img src="https://lh3.googleusercontent.com/JQ9pY-DcVADhpakD7VmEKqNk8bUJiyOsGqFCEVL4DWoB85H8_h1K4ZdMon3g3g7KIzKnaHH1KRjRfjpqI_aW6T3bI1fdRU1RQsU4jG2r0OCrketNxsYKT3MiCgDKA-18gt4ZG0V8jFGJKHWtR724TwVmo3W3lOkLRTJRa3qmYuRSkVtNgFP8mgQQjaVHhJI3ZWEYSTqNm-7HM__1H7D2XPnI16KvCmtDPtVVNC1x_nEWGocN5hFYlqzkBtNeZiiea8lD3EDTmy93B_9yUi8l4nGGPhMhj9mIozVhsLSSLRN2T6CgYolu6lAYidbBYcFbIBvU17YEKxOWc4JNu4I7fgF8iQkgpodYQEeJaO2MYhU9EU53w1bFF75cXbtCZgrP92BluS6iuwzkvgLO1tZS8lKmwTeirVFIZBJIG0S3i5KVeSkFoM8MDFv_a_RL3ncHNLqHzqIXXG8skyX1PlH9_PhgWTFl4JcFjD03ITWaDncE6N5Us_RMkLsbGigZQ-15ND1qEmTW7vtRwM4AgcoUnPlCPDyA4sZdVh11K8I4sEuQBQ7lWHJvWTG3JwIYGQNgLLewUj4V3Rv0dHuZA1BNjXp2K0ywPNen0ODiNSh1dgVPMr9c7ph_zrmLifzc39iHFEP9UifcGqeSzqUxtwK_gqwPkZCkfJPLvtwK_wfkwA1hbjsFSZ0HPIwL75NqErIlSuYsa-fgj3i5v9CVkyt2VA=w100-h107-no?authuser=0" alt="Mom-Car">
+        </div>
+
+        <img id="FIRE" style="margin-top:-8px;margin-left:-8px;display:none" src="https://lh3.googleusercontent.com/Tq7nhp5Ts8WhtFFhsbK9tPUCnLdeE2DhHm49hs-_VO6HCv0jqd88ojTnNJwPgiENVqD64KORaejUnmF_WgFCplo-jOqXsqrXAxlBlUkhBxWM-JTWQSWvKdxAwFneyeH5LcF6JcnTkgVkYfMoMdlquUPh1K1ydgJXb6V5-ab1ErvCkDpuUM1foefkCQIOTaGW8o2vVQCUTIhTX8-vCn4wRzUr2strBYEnN-UaxTqCnXVTFa4xMakOmcARpShqrFfQ2MwwziHpesnFC5iNna-5ybEVLrT5N9ZVLg0JyHQNYl1AhJfHqYY1urtGHNxxqs-d-0_QYe0DkJeuNKwj7Q9vzNKuz77krsm3ZEeOiK10ldLhWd9CZ2_y7YpAEPhxYxd-SvJ2hu7ntj6Rix6X-CpYVCyCGj2CIclEeb8RaT_1YSmhUHBOiywBnWMXnPU-U6BzCknja0YdHtVYY8Dxgh_U1uwM9YfKeLBVl_8_aqBQm2bujwH6afUec-GGKYftxEyYs-jzsYL4Xm-JV0r4l1RVeJt1ztqHUCKeL_o5YqrtlZP1GhkhU1XSCIqJFlbzjZ-NisbOsO4jWg-R6frWuLN8103ScSJGn1aiw08knd_0TX68Sd06v_HpsSoOt5YHa8HwJWUaVZO8vdbHcIVfVCt2JNdSOwGHtCkSPxq8NC62v8sZddOrew0XXJ58JE7gNib6TYBo2AZrCYakPlx6AEBCWYg=w1001-h565-no?authuser=0" alt="Millions actually died.">
+
+        <div id="buttonPanel" style="display:inline">
+            <button id="left" onclick="driveFunction(id)" type="button">Left</button>
+            <button id="straight" onclick="driveFunction(id)" type="button">Straight</button>
+            <button id="right" onclick="driveFunction(id)" type="button">Right</button>
+        </div>
+        <button id="reset" type="button" style="display:none" onclick="failFunction()">Try Again!</button>
+        
+        <div id="question">
+            Does the rain in Spain fall mainly on the Plain?
+        </div>
+    </body>
+</html>
+
+<!--
+    Coordinate Locatons:
+        Start = z (top: 425px; left: 253px;)
+        1st Turn = a (top: 250px; left: 253px;)
+        2nd Turn = b (top: 225px; left: 90px; transform:rotate(270);)
+        3rd Turn = c (top: 125px; left: 90px; transform:rotate(0);)
+
+    Car Rotation:
+        Horizontal (flat | Starting Position) = rotZ
+        90 Degrees left (relative to z) = rotA
+        90 Degrees right (relative to z) = rotB
+
+    Failure State:
+        Show Failure Screen | Hide Game Screen = x
+
+        Pathing:
+            From Start:
+                Left Button:
+                    if at z than fail
+                    if at a than set car coordinates to b
+                    if at b than fail
+                    if at c than fail
+
+                Straight Button:
+                    if at z than set car coordinates to a
+                    if at a than fail
+                    if at b than fail
+                    if at c than fail
+
+                Right Button:
+                    if at z than fail
+                    if at a than fail
+                    if at b than set car coordinates to c
+                    if at c than make API request
+
+            Fail Screen:
+                Hide all elements
+                Display failure image & play failure audio
+                Display Reset Button
+                    Reset Button:
+                        Hide failure screen
+                        Hide reset button
+                        Restore Car to z
+                        Display Car
+                        Display navigation buttons
+-->
