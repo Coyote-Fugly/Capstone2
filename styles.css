@@ -1,10 +1,15 @@
 body {
     background-image: url(spainRoad.png);
     background-repeat: no-repeat;
-    height: 550px;
-    Width: 958px;
+    background-size: 1000px 575px;
 }
 
+#FIRE {
+    margin-top:-8px;
+    margin-left:-8px;
+    height: 550px;
+    width: 1000px;
+}
 button {
     position: relative;
     margin: .5em;
@@ -19,12 +24,9 @@ button {
 #reset {
     position: absolute;
     top: 140px;
-    right: 125px;
+    left: 760px;
 }
 
 #momCar {
-    /* display: inine; */
     position: absolute;
-    /* top: 425px;
-    left: 253px; */
 }
